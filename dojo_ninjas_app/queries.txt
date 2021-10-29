@@ -1,0 +1,42 @@
+Create 3 dojos 
+>>> dojo1 = Dojo.objects.create(name="Dojo 1", city = "Buffalo", state = "NY")
+>>> dojo2 = Dojo.objects.create(name="Dojo 2", city = "Sacremento", state = "CA")
+>>> dojo3 = Dojo.objects.create(name="Dojo 3", city = "Seattle", state = "WA")
+
+
+Delete the first 3 dojos 
+>>> dojo1.delete()
+>>> dojo2.delete()
+>>> dojo3.delete()
+
+Create 3 more dojos
+>>> dojo4 = Dojo.objects.create(name = "Dojo 4", city = "Los Angeles", state = "CA")
+>>> dojo5 = Dojo.objects.create(name = "Dojo 5", city = "Staten Island", state = "NY")
+>>> dojo6 = Dojo.objects.create(name = "Dojo 6", city = "Groveland", state = "CA")
+
+Create 3 ninjas that belong to the first dojo
+>>> ninja1 = Ninja.objects.create(first_name = "Freddy", last_name = "Krugger", dojo = dojo4)
+>>> ninja2 = Ninja.objects.create(first_name = "Jason", last_name = "Voorhees", dojo = dojo5)
+>>> ninja3 = Ninja.objects.create(first_name = "Charles", last_name = "Ray", dojo=dojo6)
+
+Create 3 ninjas that belong to the second dojo
+>>> ninja4 = Ninja.objects.create(first_name = "Charles", last_name = "Manson", dojo = dojo4)
+>>> ninja5 = Ninja.objects.create(first_name = "Peter", last_name = "Pan", dojo= dojo5)
+>>> ninja6 = Ninja.objects.create(first_name = "Bruce", last_name = "Banner", dojo = dojo6)
+
+Create 3 ninjas that belong to the third dojo
+>>> ninja7 = Ninja.objects.create(first_name = "Peter", last_name = "Parker", dojo = dojo4)
+>>> ninja8 = Ninja.objects.create(first_name = "Joe", last_name = "Balucci", dojo= dojo5)
+>>> ninja9 = Ninja.objects.create(first_name = "Tony", last_name = "Soprano", dojo= dojo6)
+
+Retrieve all ninjas from the first dojo
+>>> Dojo.objects.first().ninjas.all()
+
+Retrieve all ninjas from the last dojo
+>>> Dojo.objects.last().ninjas.all()
+
+Retrieve the last ninja's dojo
+>>> Ninja.objects.last().dojo
+
+Create a new dojo
+dojo7 = Dojo.objects.create(name = "Primary Dojo", city = "Scranton", state = "PA")
