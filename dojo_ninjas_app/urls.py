@@ -1,6 +1,8 @@
-from django.conf.urls import url
+from django.urls import path
 from . import views
 
 urlpatterns = [
-    url(r'^$', views.index),
+    path('', views.index),
+    path('ninjas/create', views.create_ninja),
+    path('dojos/create', views.create_dojo),
 ]
